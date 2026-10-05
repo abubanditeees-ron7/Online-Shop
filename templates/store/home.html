@@ -1,0 +1,361 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Best Store | Home
+{% endblock %}
+
+
+{% block content %}
+
+
+<!-- HERO SECTION -->
+
+<section class="hero-section">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <div class="hero-text">
+
+                <span class="hero-small-title">
+
+                    BEST ONLINE SHOPPING
+
+                </span>
+
+
+                <h1>
+
+                    Discover Amazing
+                    <br>
+
+                    Products For You
+
+                </h1>
+
+
+                <p>
+
+                    Find the best products, great prices
+                    and special offers in one place.
+
+                </p>
+
+
+                <a
+                    href="#featured-products"
+                    class="hero-button"
+                >
+
+                    Shop Now
+
+                </a>
+
+            </div>
+
+
+            <div class="hero-image">
+
+                <div class="hero-circle">
+
+                    <span>
+                        🛍
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CATEGORIES SECTION -->
+
+<section class="categories-section">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div>
+
+                <span class="section-subtitle">
+
+                    SHOP BY CATEGORY
+
+                </span>
+
+                <h2>
+
+                    Popular Categories
+
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="category-grid">
+
+
+            {% for category in categories %}
+
+
+                <div class="category-card">
+
+
+                    {% if category.image %}
+
+                        <img
+                            src="{{ category.image.url }}"
+                            alt="{{ category.name }}"
+                        >
+
+                    {% else %}
+
+                        <div class="category-placeholder">
+
+                            📦
+
+                        </div>
+
+                    {% endif %}
+
+
+                    <h4>
+
+                        {{ category.name }}
+
+                    </h4>
+
+                </div>
+
+
+            {% empty %}
+
+
+                <p class="empty-message">
+
+                    Categories will appear here.
+
+                </p>
+
+
+            {% endfor %}
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FEATURED PRODUCTS -->
+
+<section
+    id="featured-products"
+    class="products-section"
+>
+
+    <div class="container">
+
+
+        <div class="section-header">
+
+            <div>
+
+                <span class="section-subtitle">
+
+                    OUR COLLECTION
+
+                </span>
+
+                <h2>
+
+                    Featured Products
+
+                </h2>
+
+            </div>
+
+
+            <a
+                href="#"
+                class="view-all-button"
+            >
+
+                View All Products →
+
+            </a>
+
+        </div>
+
+
+        <div class="products-grid">
+
+
+            {% for product in featured_products %}
+
+
+                <div class="product-card">
+
+
+                    <div class="product-image-wrapper">
+
+
+                        {% if product.old_price %}
+
+                            <span class="discount-badge">
+
+                                SALE
+
+                            </span>
+
+                        {% endif %}
+
+
+                        <img
+                            src="{{ product.image.url }}"
+                            alt="{{ product.name }}"
+                        >
+
+
+                        <button class="quick-view-button">
+
+                            Quick View
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="product-info">
+
+
+                        <span class="product-category">
+
+                            {{ product.category.name }}
+
+                        </span>
+
+
+                        <h3>
+
+                            {{ product.name }}
+
+                        </h3>
+
+
+                        Ф<div class="product-price">
+
+
+                            <span class="current-price">
+
+                                ${{ product.price }}
+
+                            </span>
+
+
+                            {% if product.old_price %}
+
+                                <span class="old-price">
+
+                                    ${{ product.old_price }}
+
+                                </span>
+
+                            {% endif %}
+
+                        </div>
+
+
+                        <button class="add-cart-button">
+
+                            Add to Cart
+
+                        </button>
+
+
+                    </div>
+
+                </div>
+
+
+            {% empty %}
+
+
+                <p class="empty-message">
+
+                    Products will appear here after you add
+                    them through the admin panel.
+
+                </p>
+
+
+            {% endfor %}
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SPECIAL OFFER -->
+
+<section class="special-offer">
+
+    <div class="container">
+
+        <div class="offer-content">
+
+            <div>
+
+                <span>
+
+                    SPECIAL OFFER
+
+                </span>
+
+                <h2>
+
+                    Get up to 50% Off
+
+                </h2>
+
+                <p>
+
+                    Don't miss our special offers and
+                    exclusive discounts.
+
+                </p>
+
+            </div>
+
+
+            <a
+                href="#featured-products"
+                class="offer-button"
+            >
+
+                Shop Offers
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+{% endblock %}

@@ -1,5 +1,6 @@
 .venv/
 __pycache__/ 
+*.pyc
 *.py[cod]
 *$py.class
 db.sqlite3
@@ -9,3 +10,4 @@ media/
 .idea/
 .DS_Store
 Thumbs.db
+staticfiles/
