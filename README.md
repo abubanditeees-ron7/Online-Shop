@@ -44,3 +44,40 @@ python manage.py migrate
 Start the server:
 
 python manage.py runserver
+
+
+# Online Shop
+
+## Project Description
+
+Online Shop is a Django web application for an online store.
+
+## Technologies
+
+- Python
+- Django
+- PostgreSQL
+- Gunicorn
+- Render
+- HTML
+- CSS
+
+## Deployment
+
+The project is deployed on Render.
+
+Production URL:
+
+https://online-shop-et3h.onrender.com
+
+## Deployment Platform
+
+Render
+
+## Database
+
+PostgreSQL
+
+## Status
+
+Live
